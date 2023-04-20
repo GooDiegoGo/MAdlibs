@@ -1,8 +1,8 @@
-const readLine = require('readline-sync');
+const readline = require('readline-sync');
 
 let diceRolled = [];
 let character1={
-//empty to start
+//empty to start 
 }
 
 createChar(character1, diceRolled);
@@ -34,31 +34,40 @@ function rollStat(list){
 }
 
 function createChar(character, list){
-    character.name = readLine.question("Enter character name: ");
+    character.name = readline.question("Enter character name: ");
     console.log("Rolling STR");
     character.strength = rollStat(diceRolled);
-    console.log("Rolling DEX");
-    character.dexerity = rollStat(diceRolled);
-    console.log("Rolling CON");
-    character.constitution = rollStat(diceRolled);
+    console.log("Rolling SPE");
+    character.speed = rollStat(diceRolled);
+    console.log("Rolling BRE");
+    character.Breathing = rollStat(diceRolled);
     console.log("Rolling INT");
     character.intelligence = rollStat(diceRolled);
     console.log("Rolling WIS");
     character.wisdom = rollStat(diceRolled);
-    console.log("Rolling CHA");
-    character.charisma = rollStat(diceRolled);
-    console.log(character)
+    console.log("Rolling STY");
+    character.Breathingstyle = rollStat(diceRolled);
+    console.log("Rolling Life");
+    character.Lifespand = rollStat(diceRolled);
+    console.log("Rolling Fire");
+    character.Firebreathing = rollStat(diceRolled);
+    console.log("Rolling MVO");
+    character.Movesets = rollStat(diceRolled);
+    console.log(character);
+    displayChar(character);
 }
 
-function displayChar(Char){
-    console.log(`------------------------`)
-    console.log(`name: ${Char.name}`);
-    console.log(`str: ${Char.strength }`);
-    console.log(`dex: ${Char.dexerity}`);
-    console.log(`con: ${Char.constitution}`);
-    console.log(`int: ${Char.intelligence}`);
-    console.log(`wis: ${Char.wisdom}`);
-    console.log(`cha: ${Char.charisma}`);
-    console.log(`------------------------`)
-
-}
+function displayChar(char){
+    console.log('-----------------------');
+    console.log(`Name: ${char.name}`);
+    console.log(`STR: ${char.strength}`);
+    console.log(`SPE: ${char.speed}`);
+    console.log(`BRE: ${char.Breathing}`);
+    console.log(`INT: ${char.intelligence}`);
+    console.log(`WIS: ${char.wisdom}`);
+    console.log(`STY: ${char.Breathingstyle}`);
+    console.log(`Life: ${char.Lifespand}`);
+    console.log(`Fire: ${char.Firebreathing}`);
+    console.log(`MVO: ${char.Movesets}`);
+    console.log('-------------------------');
+} 
